@@ -25,7 +25,7 @@ docker compose down
 
 ##Accesos
 
-* Frontend: http://localhost:3000
+* Frontend: http://localhost
 * Backend: http://localhost:8000
 
 ## Funcionalidades
