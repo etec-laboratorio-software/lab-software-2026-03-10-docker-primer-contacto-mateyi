@@ -17,13 +17,18 @@ const MONGO_URL = process.env.MONGO_URL || 'mongodb://admin:admin123@localhost:2
 // ==================== MIDDLEWARES ====================
 app.use(cors({
   origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200   // Para navegadores legacy
 }));
+
+// Responder explícitamente a preflight OPTIONS
+app.options('*', cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Logger
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
   next();
