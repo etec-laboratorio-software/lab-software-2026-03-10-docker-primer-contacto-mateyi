@@ -41,9 +41,9 @@ El servidor corre en `http://localhost:3000`
 ### Terminal 3 — Frontend
 ```bash
 cd FRONTEND
-python -m http.server 8000
+python -m http.server 8080
 ```
-Abrir en el navegador: `http://localhost:8000`
+Abrir en el navegador: `http://localhost:8080`
 
 ---
 
